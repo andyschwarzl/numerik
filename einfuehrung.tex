@@ -106,3 +106,14 @@ E_M=2 eps = b^{-t+1}
 $E_M$ ist der Abstand zwischen 1 und der nächstgrößeren GPZ
 
 \subsubsection{Gleitpunktarithmetik}
+Schon elementare Operationen von GPZen führen zu Resultaten, die nicht im $\Fhat$
+liegen, zB $\frac{1}{3} \not \in \Fhat$. \\
+Maschinenoperationen: $\oplus$, $\ominus$, $\odot$, $\oslash$ \\
+Standard für die Genauigkeit von Maschinenoperationen (IEEE 754): \\
+$ x \circ y = rd(x \box y) $ für $ x, y \in \Fhat, 
+x_{min}(\F) \leq | x \circ y | \leq x_{max}(\F)$ \\
+%TODO center:
+\begin{center}
+  $\Updownarrow$ \\
+\end{center}
+$ x \circ y = (x \box y)(1 + \delta) $ mit $ |\delta | \leq eps$
