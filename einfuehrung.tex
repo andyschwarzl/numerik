@@ -36,7 +36,7 @@ Von der Problemstellung zur Näherungslösung:
 		\Fhat = \F \cup \F_d \hspace{0.5cm} \text{mit} \hspace{0.5cm} & \F && \text{normalisierte Gleitpunktzahlen}\\
 		 &\F_d && \text{denormalisierte Gleitpunktzahlen} 
 \end{align*}
-\subsubsection{Normalisierte GPZ}
+\para{Normalisierte GPZ}
 
 \begin{align*}
 x = \sigma\,\cdot\,M\,\cdot\,\,b^e \hspace{0.5cm} \text{mit} \hspace{0.5cm} & \sigma && \text{Vorzeichen}\\
@@ -57,7 +57,7 @@ Schreibweise:
 x = \sigma\,(0.d_1d_2d_3\,\cdots\,d_t)b^e
 \end{equation*}
 
-\subsubsection{Denormalisierte GPZen}
+\para{Denormalisierte GPZen}
 \missingfigure{zahlenstrahl}
 
 \begin{align*}
@@ -66,7 +66,7 @@ M = \sum^t_{k=2} d_k b^{-k} \hspace{0.5cm} \text{mit} \hspace{0.5cm} & d_2,\cdot
 & \text{keine Normierung} 
 \end{align*}
 
-\subsubsection{Gleitpunktzahlsystem}
+\para{Gleitpunktzahlsystem}
 \Fhatfunc{b,t,$e_{min}$,$e_{max}$}
 
 \example{Beispiel: "`Doppeltes Grundformat"' ("`double"' in C, Java, MATLAB)}
@@ -76,10 +76,10 @@ kleinste/größte pos Zahl:
 \begin{align*}
 	& x_{min}(\F) =  2^{-1022}\,\approx\, 2,23\cdot\,10^{-308} \\
 	& x_{max}(\F) \approx 1,8\,\cdot\,10^{308} \\
-	& x_{min}(\Fhat) \approx 5\cdot\,10^{-324} 
+  & x_{min}(\Fhat) \approx 5\cdot\,10^{-324} & \text{nicht in diesen Bereich gehen!}
 \end{align*}
 
-\subsection{Rundung}
+\subsubsection{Rundung}
 Die Abbildung $rd: \mathbb{R} \rightarrow \Fhat, x\,\mapsto\,rd(x)$ heißt Rundung, wenn $|rd(x)-x|=min|y-x|, y\in\,\F$. 
 \todo{realtiver Fehler unterbringen}
 \begin{empheq}[innerbox=\fbox,right=\Leftarrow{\text{gilt nur für normalisierte Zahlen}}]{align*}
