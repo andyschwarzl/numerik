@@ -117,3 +117,41 @@ x_{min}(\F) \leq | x \circ y | \leq x_{max}(\F)$ \\
   $\Updownarrow$ \\
 \end{center}
 $ x \circ y = (x \box y)(1 + \delta) $ mit $ |\delta | \leq eps$
+
+\subsubsection{Fehlerverstärkung bei elementaren Rechenoperationen}
+Fragestellung: Wie wirken sich fehlerbehaftete Eingangsdaten bei elementaren
+Rechenoperation aus? Kann es zu einer wesentlichen Fehlerverstärkung kommen?
+Ja, es kommt aber darafu an.
+\example{Bsp:}
+$ f(x)=\frac{1 - \cos(x)}{x^2} $ für $x=1.2 \cdot 10^{-5} $
+Angenommen wir runden $\cos(x)$ auf 10 Stellen genau \\
+$ \cos(x) \approx 0.999 999 999 9 =: c $ \\
+$ \frac{1 - c}{x^2} = \frac{10^{-10}}{1.44 \cdot 10^{-10}} = 0.6944\dots $ \\
+Mit Hilfe der Taylorreihe lässt sich zeigen, dass $ f(x) \in [0, \frac{1}{2}) $. \\
+relativer Fehler $ \geq \frac{0.69 - 0.5}{0.5} = 38\% $ \\
+
+\para{Fehlerverstärkung bei Addition (Subtraktion)}
+Seien $ a, b \in \mathbb{R} $ gegeben und
+$ \tilde{a} = rd(a) = a (1 + \delta_{a}) $ mit $ | \delta_{a} | \leq eps $ sowie
+$ \tilde{b} = rd(b) = b (1 + \delta_{b}) $ mit $ | \delta_{b} | \leq eps $ \\
+Relative Fehler\\
+$ | \frac{\tilde{a} + \tilde(b) - (a + b)}{a + b} | =
+| \frac{a\delta_{a} + b\delta_{b}}{a + b} | \leq eps \frac{|a| + |b|}{|a + b|} $ \\
+Ist $ |a + b| \ll |a| + |b| $ dann kann der relative Fehler groß werden.
+D.h. bei der Subtraktion zweier annähernd gleich großer Zahlen, können
+sich Eingangsfehler erheblich verstärken. $\Rightarrow$ Auslöschung
+signifikanter Stellen
+
+\para{Fehlerverstärkung bie Multiplikation}
+Seien $ a, b \in \mathbb{R} $ gegeben und
+$ \tilde{a} = rd(a) = \frac{a}{1 + \delta_{a}} $ mit $ | \delta_{a} | \leq eps $ sowie
+$ \tilde{b} = rd(b) = \frac{b}{1 + \delta_{b}} $ mit $ | \delta_{b} | \leq eps $ \\
+Relative Fehler\\
+$ | \frac{\tilde{a}\tilde{b} - a b}{a b} | =
+| \frac{\frac{ab}{(1 + \delta_{a})(1 + \delta_{b})} - ab}{ab}| =
+| \frac{ab - ab(1 + \delta_{a})(1 + \delta_{b})}{ab(1 + \delta_{a})(1 + \delta_{b})} | =
+| \frac{ab(\delta_{a} + \delta_{b} + \delta_{a}\delta_{b})}{ab(1 + \delta_{a})(1 + \delta_{b})} | \leq
+\frac{3eps}{1 - 3eps} \leq 4eps $ \\
+$\Rightarrow$ Multiplikation führt nicht zu einer wesentlichen Fehlerverstärkung.
+Dasselbe lässt sich für die Division zeigen.
+
