@@ -28,8 +28,30 @@ $ rd(\sqrt{0.0006}) = 0.02449 = \tilde{c_1} $ \\
 relativer Fehler: $ | \frac{\tilde{c_1} - c_2}{c_2} | = 5.24\% $ \\
 
 $ \tilde{c_2}: $ \\
-$ rd(\frac{\tilde{\phi}}{2}) = 0.6665 $ \\
-$ rd(\sin(0.6665)) = 0.01163 $ \\
-$ rd(2 \cdot 0.01163) = 0.02326 = \tilde{c_2} $ \\
+\begin{equation*}
+\begin{split}
+  rd(\frac{\tilde{\phi}}{2}) = 0.6665 \\
+  rd(\sin(0.6665)) = 0.01163 \\
+  rd(2 \cdot 0.01163) = 0.02326 = \tilde{c_2} \\
+\end{split}
+\end{equation*}
 relativer Fehler: $ | \frac{\tilde{c_2} - c_2}{c_2} | = 0.04525\% $ \\
 
+\subsubsection{Beispiel 3}
+$ rd(x) = \tilde{x} = x(1 + \delta) $ \\
+relativer Fehler: \\
+\begin{equation*}
+| \frac{\frac{1}{ln(x + 1) + x} - \frac{1}{ln(\tilde{x} + 1) + \tilde{x}} }{\frac{1}{ln(x + 1) + x}} | =
+| 1 - \frac{\frac{1}{ln(\tilde{x} + 1) + \tilde{x}} }{\frac{1}{ln(x + 1) + x}} | =
+| 1 - \frac{ln(1 + x) +x}{ln(\tilde(x)) + \tilde{x}} | := | h(\tilde{x}) |
+\end{equation*}
+$ h(\tilde{x}) $ ist streng monoton $ \Rightarrow $ Extremstellen nur bei 
+$ \tilde{x} = 1.05 $ und $ \tilde{x} = 0.95x $ zu erwarten. \\
+\begin{equation*}
+\begin{split}
+  h_1 = 1 - \frac{ln(1 + x) + x}{ln(1 + 1.05x) + 1.05x} \\
+  h_2 = 1 - \frac{ln(1 + x) + x}{ln(1 + 0.95x) + 0.95x}
+\end{split}
+\end{equation*}
+
+\missingfigure{Plot von $h_1$ und $h_2$}
