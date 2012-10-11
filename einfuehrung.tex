@@ -161,3 +161,19 @@ Relative Fehler
 $\Rightarrow$ Multiplikation führt nicht zu einer wesentlichen Fehlerverstärkung.
 Dasselbe lässt sich auch für die Division zeigen.
 
+\subsection{Landau-Symbole (``$\LandauO$-Notation'')}
+Verwendung zur:
+\begin{itemize}
+  \item Beschreibung des asymptotischen Verhaltens von Funktionen
+  \item Effizienzverhalten von Algorithmen
+\end{itemize}
+Definition: Seien $f,y: \mathbb{R} \to \mathbb{R}$
+\begin{enumerate}[(a)]
+  \item $f(x) = \LandauO(g(x))$ für $x \to a :\Leftrightarrow$
+    Es gilt $c > 0$ und $\delta > 0$, so dass für alle $x \in \{|y - a| < \delta\}: |f(x)| \leq c|g(x)| $
+  \item $f(x) = \LandauO(g(x))$ für $x \to \infty :\Leftrightarrow$
+    Es gilt $c > 0$ und $x_0 > 0$, so dass für alle $x > x_0:\,|f(x)| \leq c|g(x)|$
+  \item $f(x) = \Landauo(g(x))$ für $x \to \box (\in \mathbb{R} \cup \{\pm \infty\} :\Leftrightarrow
+    \lim_{x \to \box}{|\frac{f(x)}{g(x)}|} = 0$
+\end{enumerate}
+
