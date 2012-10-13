@@ -22,3 +22,45 @@ Warum und weshalb:
   \item wichtige theoretische Grundlage für verschiedene andere numerische
     Aufgaben (Integration, Differenzialgleichungen)
 \end{itemize}
+
+\subsection{Polynominterpolation}
+Geg.: Paarweise verschiedene Stützstellen $x_0, x_1, \cdots x_n$ und
+Werte $f_0, f_1, \cdots f_n$.
+Ges.:
+\begin{equation*}
+  \tag{2.1} p_n \in  \Pi_n \text{, so dass } p_n(x_i) = 
+  f_i \text{ für } i = 0, 1, \cdots ,n
+\end{equation*}
+Grundlegende Fakten zu Polynomen:
+\begin{enumerate}[(i)]
+  \item $\Pi_n$ ist ein Vektorraum
+  \item Die Monone $1, x, x^2, \cdots, x^n$ bilden eine Basis von $\Pi_n$
+  \item Polynom von Grad n mit komplexen Koeffzienten besitzt genau n-Nullstellen
+    in $\mathbb{C}$, wobei die Anzahl der Nullstellen entsprechend der Vielfachheit
+    gezählt wird.
+\end{enumerate}
+Satz: Die Polynominterpolationsaufgabe (2.1) ist eindeutig lösbar\\
+Beweis:
+\begin{enumerate}[(a)]
+  \item Eindeutigkeit: Angenommen $p_n, q_n \in \Pi_n$ erfüllen (2.1)\\
+    $r := p_n - q_n \in \Pi_n$ \\
+    $r(x_i) = 0$ für $i = 0, \cdots, n \Rightarrow r$ hat $n + 1$ Nullstellen
+    $\Rightarrow r \equiv 0 \Rightarrow p_n \equiv q_n$
+  \item Existenz: Konstruiere Polynome $L_0(x), L_1(x), \cdots, L_n(x) \in \Pi_n$ mit\\
+    $L_i(x_k)=\begin{cases} 1 & \mbox{für } \mbox{ $i = k$} \\ 
+      0 & \mbox{sonst} \end{cases}$ \\
+    $\Rightarrow L_i$ hat n Nullstellen: 
+    $x_0, x_1, \cdots, x_{i-1}, x_{i+1}, \cdots, x_n\; L_i \in \Pi_n$\\
+    $\Rightarrow L_i(x) = a(x-x_0)(x-x_1)\cdots(x-x_{i-1})(x-x_{i+1})\cdots(x-x_n)$\\
+    $L_i(x_i) =! 1 \Rightarrow$
+      $a = \frac{1}{(x_i-x_0)(x_i-x_1)\cdots(x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}$\\
+    $\Rightarrow L_i(x) = \frac{(x - x_0)\cdots}{(x_i - x_0)\cdots} = $
+      $\prod\limits_{j = 0,\,j \neq i}^n \frac{x - x_j}{x_i - x_j}$ Lagrange-Polynome \\
+    \begin{equation*}
+      \tag{2.2}
+      p_n(x) = f_0 L_0(x) + f_1 L_1(x) + \cdots + f_n L_n(x) = 
+      \sum\limits_{k = 0}^n f_k L_k(x)
+    \end{equation*}
+    $p_n(x_i) = 0 + 0 + \cdots + f_i L_i(x_i) + 0 + \cdots = f_i$\\
+    $f_i L_i(x_i) = 1$
+\end{enumerate}
