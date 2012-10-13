@@ -191,4 +191,17 @@ zu verstehen: Symmetrie $[a = b \Leftrightarrow b = a]$ und Transitivität
 $[a = b \wedge b = c \Rightarrow a = c]$ gelten i.A. nicht. \\
 z.B.: $x = \LandauO(x^2)$ für $x \to \infty$ aber $x^2 \neq \LandauO(x)$ für $x \to \infty$
 
-
+\subsection{Fehleranalyse}
+Bei der Analyse der Fehlerfortpflanzung bei der Lösung von mathematischen Problemen
+unterscheidet man:
+\begin{itemize}
+  \item Kondition des Problems
+  \item Stabilität des Algorithmus (zur Lösung des Problems)
+\end{itemize}
+\para{Kondition eines Problems}
+Mathemathisches Problem sei durch eine Funktion beschrieben: $H:X \to Y$ \\ Input
+$x \mapsto H(x)$ Resultat\\
+Fehlberbehafteter Input $x + \Delta x$ mit $\Delta x$ als Fehler
+\begin{align*}
+  \frac{|| H(x + \Delta x) - H(x)||}{|| H(x) ||} = ?
+\end{align*}
