@@ -238,3 +238,33 @@ $\kappa(H, x)$ wird (relative) Kondition(szahl) des Problems $H$ für den Input 
 genannt. (Mehrdimensionaler Fall: Analoge Definition; verwende Normen statt Beträge) \\
 Ein Problem heißt gut konditioniert, falss die Konditionszahl klein (nahe bei 1) ist
 (für die infragekommenden Inputs).
+
+\example{Beispiel:}
+Die Nullstellen der quadratischen Gleichung $\lambda^2 - 2x\lambda + 1 = 0$ sind
+für $x > 1$ gegeben durch $\lambda_1 = x +\sqrt{x^2 - 1} \;\;\; \lambda_2 = x - \sqrt{x^2 - 1}$ \\
+Konditionszahl für $\lambda_2 = H(x)$
+\begin{align*}
+  \kappa(H, x) = |\frac{x H^{\prime}(x)}{h(x)}| = 
+  |\frac{x[1 - \frac{1}{2}(x^2 - 1)^{-\frac{1}{2}} 2x]}{x - \sqrt{x^2 - 1}} | =
+  |\frac{\frac{x(\sqrt{x^2 - 1} - x)}{\sqrt{x^2 - 1}}}{x - \sqrt{x^2 - 1}}| =
+  |- \frac{x}{\sqrt{x^2 - 1}}|
+\end{align*}
+Fallunterscheidung:
+\begin{enumerate}[(i)]
+  \item $x \gg 1:\ \kappa(H, x) \approx 1 \Rightarrow$ gut konditioniert
+  \item $x \approx 1:\ \kappa(H, x)$ groß $\Rightarrow$ schlecht konditioniert
+\end{enumerate}
+Berechnung der Lösung für i)
+\begin{enumerate}[(a)]
+  \item $H(x) = x - \sqrt{x^2 - 1}$ numerisch instabil (Auslöschung)
+  \item $H(x) = \frac{(x - \sqrt{x^2 - 1})(x + \sqrt{x^2 - 1})}{x + \sqrt{x^2 - 1}} = $
+    $\frac{1}{x + \sqrt{x^2 - 1}}$ numerisch stabil
+\end{enumerate}
+
+\para{Stabilität eines Algorithmus}
+Dafür gibt es verschidene uneinheitliche Konzepte und Definitionen. \\
+Komperative Erklärung: \\
+Algorithmus I zur Lösung eines Problemes ist stabiler als Algorithmus II,
+wenn der Gesamteinfluss der Rundungsfehler bei Algorithmus I kleiner als
+bei Algorithmus II ist.
+
