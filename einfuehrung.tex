@@ -177,3 +177,18 @@ Definition: Seien $f,y: \mathbb{R} \to \mathbb{R}$
     \lim_{x \to \box}{|\frac{f(x)}{g(x)}|} = 0$
 \end{enumerate}
 
+\example{Beispiel:}
+\begin{align*}
+  \frac{x + 1}{x} = \LandauO(\frac{1}{x}) \text{ für } x \to \infty \text{ , denn }
+  \frac{1}{x} + \frac{1}{x^2} \leq \frac{1}{x} + \frac{1}{x} = 2 \frac{1}{x} \text{ für } x \geq 1 = x_0
+\end{align*}
+\begin{align*}
+  x^{\alpha} = \Landauo(x^{\alpha + 1}) \text{ für } x \to \infty \text{ , denn }
+  \frac{x^{\alpha}}{x^{\alpha + 1}} = \frac{1}{x} \to 0
+\end{align*}
+Vorsicht: Das Gleichheitszeichen ist bei Verwendung der Landau-Symbole rein symbolisch
+zu verstehen: Symmetrie $[a = b \Leftrightarrow b = a]$ und Transitivität 
+$[a = b \wedge b = c \Rightarrow a = c]$ gelten i.A. nicht. \\
+z.B.: $x = \LandauO(x^2)$ für $x \to \infty$ aber $x^2 \neq \LandauO(x)$ für $x \to \infty$
+
+
