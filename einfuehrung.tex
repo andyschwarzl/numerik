@@ -205,3 +205,16 @@ Fehlberbehafteter Input $x + \Delta x$ mit $\Delta x$ als Fehler
 \begin{align*}
   \frac{|| H(x + \Delta x) - H(x)||}{|| H(x) ||} = ?
 \end{align*}
+\para{Satz von Taylor (Taylorreihenentwicklung):}
+\begin{enumerate}[(a)]
+  \item Sei $f: I \in \mathbb{R} \to \mathbb{R}\,$ (n + 1) mal stetig differenzierbar, dann gilt für
+    $x, \Delta x \in I$: \\
+    $f(x + \Delta x) = f(x) + \Delta x f^{\prime}(x) + 
+    \frac{(\Delta x)^2}{2!}f^{\prime\prime}(x) + \cdots + 
+    \frac{(\Delta x)^n}{n!}f^n(x)+
+    \frac{(\Delta x)^{n + 1}}{(n + 1)!}f^{n + 1}(\zeta(x)) $ \\
+    wobei $x \leq \zeta(x)\leq x + \Delta x$
+  \item Sei $f: \mathbb{R}^n \to \mathbb{R}^m\,$ 2 mal stetig differenzierbar \\
+    $f(x + \Delta x) = f(x) + \Delta x f^{\prime} + R(x, \Delta x) $ \\
+    wobei $||R(x, \Delta x)|| = \LandauO(||\Delta x||^2)$ für $||\Delta x \to 0$
+\end{enumerate}
