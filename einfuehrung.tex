@@ -218,3 +218,23 @@ Fehlberbehafteter Input $x + \Delta x$ mit $\Delta x$ als Fehler
     $f(x + \Delta x) = f(x) + \Delta x f^{\prime} + R(x, \Delta x) $ \\
     wobei $||R(x, \Delta x)|| = \LandauO(||\Delta x||^2)$ für $||\Delta x \to 0$
 \end{enumerate}
+
+\para{Absoluter Fehler:}
+$\Delta H(x) := H(x + \Delta x) - H(x)$ wenn $||\Delta x|| \ll 1$ ist, dann \\
+$\Delta H(x) \cong H^{\prime} \Delta x$
+
+\para{Relative Fehler (1D Fall):}
+\begin{align*}
+  \delta H(x) := \frac{\Delta H(x)}{H(x)} \mathrel{\widehat{=}} 
+  \frac{H^{\prime} \Delta x}{H(x)} =
+  \frac{x H^{\prime}(x)}{H(x)} \cdot \frac{\Delta x}{x}
+\end{align*}
+Verstärkerfunktion $=: \kappa(H, x) = | \frac{x H^{\prime}(x)}{H(x)} |$ \\
+relative Eingangsfehler $:= \delta x = \frac{\Delta x}{x}$
+\begin{align*}
+  |\delta H(x)|  \cong \kappa(H, x) |\Delta x|
+\end{align*}
+$\kappa(H, x)$ wird (relative) Kondition(szahl) des Problems $H$ für den Input $x$
+genannt. (Mehrdimensionaler Fall: Analoge Definition; verwende Normen statt Beträge) \\
+Ein Problem heißt gut konditioniert, falss die Konditionszahl klein (nahe bei 1) ist
+(für die infragekommenden Inputs).
