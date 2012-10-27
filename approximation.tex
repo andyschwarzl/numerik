@@ -40,7 +40,7 @@ Grundlegende Fakten zu Polynomen:
     in $\mathbb{C}$, wobei die Anzahl der Nullstellen entsprechend der Vielfachheit
     gezählt wird.
 \end{enumerate}
-\paragraph{Satz:} Die Polynominterpolationsaufgabe (2.1) ist eindeutig lösbar\\
+\para{Satz} Die Polynominterpolationsaufgabe (2.1) ist eindeutig lösbar\\
 Beweis:
 \begin{enumerate}[(a)]
   \item Eindeutigkeit: Angenommen $p_n, q_n \in \Pi_n$ erfüllen (2.1), d.h. $p_n(x_i)=q_n(x_i)=f_i $für i=0,1,...n\\
@@ -268,3 +268,18 @@ Maß für dier Verstärkung des Eingangsfehlers:
 \example{Bsp:} Interpolation von $f(x) =\sin(2\pi x)$ in $[-1, 1]$ mit 21
 gleichverteilten Stützstellen. $p_{20}, p_{20}^\Delta$ mit Störung $\Delta_9 = -10^{-3}$
 \missingfigure{Sinus interpoliert}
+
+\subsubsection{Fehlerschätzung der Polynominterpolation}
+\para{Satz}
+Sei $f \in C^{n+1} [a, b]$ ($(n+1)$ mal stetig differenzierbar) und $p_n \in \Pi_n$
+das Interpolationspolynom in den paarweise verschiedenen Stützstellen $x_0, \dots, x_n$
+interpoliert, dann existiert für jedes $x \in [a, b]$ ein $\zeta \in [a, b]$ so, dass
+\begin{align*}
+  f(x) - p_n(x) = \frac{1}{(1 + n)!} f^{(n+1)}(\zeta(x))(x - x_0)\cdot \dots \cdot(x - x_n)
+\end{align*}
+Ist $f \in C^\infty [a, b]$ und gelte $\maxxab |f^{(n)}(x)| \leq M \, \forall n \in \mathbb{N}$ \\
+\begin{align*}
+  \Rightarrow \maxxab |f(x) - p_n(x)| \leq 
+  \frac{1}{(1 + n)!}M(b - a)^{n + 1} \xrightarrow[x\to\,\infty]{} 0
+\end{align*}
+
