@@ -321,3 +321,35 @@ Es gilt $\psi(\overline{x}_0^{(n + 1)}),\,\ldots,\,\psi(\overline{x}_n^{(n + 1)}
 Lösung der Minmax-Aufgabe.
 % TODO change all \dots to \ldots? add space?
 
+% 2.1.3.2
+\para{Indikator für die Güte der Wahl der Stützstellen}
+Wie gut ist für eine Funktion f die Polynominterpolation für eine bestimmte Wahl
+von $n + 1$ Stützstellen im Vergleich zur bestmöglichen Approximation der Funktion f
+durch ein Polynom?
+\para{Satz} Sei $f:[a, b] \longrightarrow \mathbb{R}$ stetig.
+\begin{enumerate}[(a)]
+  \item Es gibt eine Folge von Polynomen $(q_n)$ mit $q_n \in \Pi_n$, so dass
+    \begin{equation*}
+      \maxxab |q_n(x) - f(x)| \underset{n \to \infty}{\longrightarrow} 0
+    \end{equation*}
+  \item Es existiert genau eine Bestapproximation $q_n^* \in \Pi_n$ mit
+    \begin{equation}
+      \tag{2.3}
+      \maxxab |q_n^*(x) - f(x)| \leq \maxxab |p(x) - f(x)| \; \forall p \in \Pi_n
+    \end{equation}
+\end{enumerate}
+\para{Satz} Sei $f:[a, b] \longrightarrow \mathbb{R}$ stetig. $\xztoxn$
+seien paarweise verschiedene Stützstellen in $[a, b]$. Für $q_n^* \in \Pi_n$ gelte
+(2.3). Für das Interpolationspolynom $p_n \in \Pi_n$, das f in den Stützstellen
+$\xztoxn$ interpoliert gilt:
+\begin{equation*}
+  \maxxab |p_n(x) - f(x)| \leq (1 + \Lambda_n(\xztoxn))\,\maxxab |q_n^*(x) - f(x)|
+\end{equation*}
+\para{Beweis}
+\begin{align*}
+  \maxxab |p_n(x) - f(x)| &= \maxxab |p_n(x) - q_n^*(x) + q_n^*(x) - f(x)|\\
+  &\leq \maxxab |p_n(x) - q_n^*(x)| + \underbrace{\maxxab |q_n^*(x) - f(x)|}_{=:A}\\
+  &= \maxxab |\sumizn[f(x_i) - q_n^*(x_i)]L_i(x)| + A\\
+  &\leq \underbrace{\maxxab |f(x) - q_n^*(x)|}_A \: \underbrace{\maxxab \sumizn|L_i(x)| + A}_{\Lambda_n}\\
+  &= (1 + \Lambda_n) \: \maxxab |f(x) - q_n^*(x)|
+\end{align*}
